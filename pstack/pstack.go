@@ -84,6 +84,14 @@ func (p *PersistentStack[T]) PopAll() (items []T) {
 	return
 }
 
+func (p *PersistentStack[T]) PeekAll() (items []T) {
+	for node := p.top; node != nil; node = node.prev {
+		items = append(items, node.value)
+	}
+
+	return
+}
+
 // Adds a remember point at the top of the stack.
 func (p *PersistentStack[T]) RememberPoint(label string) error {
 	if p.top != nil {

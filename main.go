@@ -1,9 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/SaumitraLohokare/persistent_stack/pstack"
+)
 
 func main() {
-	stack := NewPersistentStack[string]()
+	stack := pstack.NewPersistentStack[string]()
 	stack.Push("A")
 	stack.Push("B")
 	stack.Push("C")
